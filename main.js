@@ -1,5 +1,7 @@
 const button = document.getElementById("btn-calcular");
 
+$("#altura").mask("0.00");
+
 button.addEventListener("click", () => {
   const peso = document.getElementById("peso");
   const altura = document.getElementById("altura");
