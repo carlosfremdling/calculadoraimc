@@ -1,19 +1,22 @@
 const button = document.getElementById("btn-calcular");
 
-$("#altura").mask("0.00");
+  
+
 
 button.addEventListener("click", () => {
   const peso = document.getElementById("peso");
-  const altura = document.getElementById("altura");
-
+  //const altura = document.getElementById("altura");
+  $('#altura').mask('0.00');
+  const altura = $('#altura').val();
+  console.log(altura);
   const span = document.getElementById("imc-result");
 
-  if ((peso.value == "") || (altura.value == "")) {
+  if ((peso.value == "") || (altura == "")) {
     alert("Informe um peso e uma altura para continuar o cálculo do IMC!");
   } else {
-    let resultado = (parseFloat(peso.value) / Math.pow(parseFloat(altura.value), 2));
+    let resultado = (parseFloat(peso.value) / Math.pow(parseFloat(altura), 2));
     peso.value = "";
-    altura.value = "";
+    $("#altura").val("");
  
   if (resultado < 18.5) {
     span.innerHTML = `Seu IMC é ${resultado.toFixed(2)} - Abaixo do Peso`;
